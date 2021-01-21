@@ -40,16 +40,16 @@ end
 class Janken
   def pon(player_hand, enemy_hand)
     # 変数「janken」に["グー", "チョキ", "パー"]を代入します。
-    puts "-----------------------"
     janken = ["グー", "チョキ", "パー"]
     #「相手の手は#{敵の生成した値}です。」と出力させます。
+    puts "-----------------------"
     puts "相手の手は#{janken[enemy_hand]}です。"
     # Playerクラスの戻り値とEnemyクラスの戻り値からじゃんけんするロジックを作成します。
       # 以降の型の例に沿って実装しましょう ※実装する時場合はコメントアウトに注意しましょう
       # if 条件を書く Playerクラスの戻り値(player_hand)とEnemyクラスの戻り値(enemy_hand)の値が同じだった場合
     if player_hand == enemy_hand
       # 「あいこ」を出力します。
-      puts "あいこ"
+      puts "「あいこです」"
       #「true」を返してじゃんけんを繰り返し実行させます。
         # ヒント！ 「return」を使用します。
       return true
