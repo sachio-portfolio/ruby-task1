@@ -2,27 +2,33 @@
 class Player
   def hand
     # 「プレイヤーに 0 ~ 2を入力させる文章」を表示させます。
-    puts "数字を入力してください。"
-    puts "0:グー, 1:チョキ, 2:パー"
+    # puts "「数字を入力してください。」"
+    # puts "0:グー, 1:チョキ, 2:パー"
     # 変数「input_hand」にプレイヤーが入力したものを取得して代入します。
       # ヒント! 「getsメソッド」を使用します。
-    @input_hand = gets.to_i
+    # input_hand = gets.chomp
     # 「input_hand」(取得した値)が「0, 1, 2」のいずれかだとwhileから脱出させ、それ以外だと初めから繰り返させます。
       # ヒント! 「while」と「if」を使用します。
       # 以降の型の例に沿って実装しましょう ※実装する時場合はコメントアウトに注意しましょう
     while true
+      puts "「0〜2の数字を入力してください。」"
+      puts "0:グー, 1:チョキ, 2:パー"
+      input_hand = gets.chomp
       # if 条件を書く (「input_hand」(取得した値)が「0, 1, 2」のいずれかの場合だった場合)
-      if @input_hand =~ /^[0-9]+$/ && @input_hand == 0 || @input_hand == 1 || @input_hand == 2
+      if input_hand =~ /^[0-9]+$/
+        h = input_hand.to_i
+      end
+      if h == 0 || h == 1 || h == 2
+        # input_hand =~ /^[0-2]$/ 正規表現は0がエンドレスになった….
+        # Integer(input_hand)
         # 「input_hand」(取得した値)をそのまま返します。
           # ヒント！ 「return」を使用します。
-        return @input_hand
+        return h
       # else ※条件以外の場合
       else
         # 「プレイヤーに 0 ~ 2を入力させる文章」を表示させます。
-        puts "もう一度数字を入力してください。"
-        puts "0:グー, 1:チョキ, 2:パー"
+        puts "「0〜2の数字ではありません。」"
         # 変数「input_hand」にプレイヤーが入力したものを取得して代入します。
-        @input_hand = gets.to_i
       # end if文のend
       end
     # end while文のend
