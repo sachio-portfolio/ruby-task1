@@ -14,11 +14,9 @@ class Player
       puts "「0〜2の数字を入力してください。」"
       puts "0:グー, 1:チョキ, 2:パー"
       input_hand = gets.chomp
+      h = input_hand.to_i
       # if 条件を書く (「input_hand」(取得した値)が「0, 1, 2」のいずれかの場合だった場合)
-      if input_hand =~ /^[0-9]+$/
-        h = input_hand.to_i
-      end
-      if h == 0 || h == 1 || h == 2
+      if input_hand =~ /(^[0-2]$)/ && h == 0 || h == 1 || h == 2
         # input_hand =~ /^[0-2]$/ 正規表現は0がエンドレスになった….
         # Integer(input_hand)
         # 「input_hand」(取得した値)をそのまま返します。
